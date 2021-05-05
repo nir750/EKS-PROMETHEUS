@@ -6,7 +6,7 @@ here you can find instructions:
 https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 
 # deploy EKS cluster
-deploy the file eksctl.yml using this command
+deploy the file eksctl.yml using this command :
 eksctl create cluster -f eksctl.yml
 
 # Deploy Prometheus
