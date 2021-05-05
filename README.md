@@ -18,3 +18,6 @@ helm install prometheus prometheus-community/prometheus \
     --set server.persistentVolume.storageClass="gp2"
 
 kubectl port-forward -n prometheus deploy/prometheus-server 8080:9090
+
+now go to:
+http://127.0.0.1:8080/graph
