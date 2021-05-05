@@ -1,0 +1,21 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+# names needs commply to the regular expression pattern: [a-zA-Z][-a-zA-Z0-9]*
+metadata:
+  name: eks-lab
+  region: eu-west-3
+  version: "1.18" # you can specfiey "1.14", "1.15", "1.16", "1.17", "1.18"
+vpc:
+  clusterEndpoints:
+    publicAccess: true
+    privateAccess: true
+managedNodeGroups:
+  - name: Demo
+    amiFamily: AmazonLinux2 # You can sepcfiey : "AmazonLinux2" (default), "Ubuntu2004", "Ubuntu1804", "Bottlerocket" , (more windows distruption)
+    instanceType: t3.medium
+    instanceName: Demo
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 2
+    volumeSize: 20
